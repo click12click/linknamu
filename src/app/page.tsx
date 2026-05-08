@@ -1,4 +1,4 @@
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 
 // 진짜 내용으로 바꿀 때는 아래 두 상수만 수정하면 된다.
 const profile = {
@@ -52,14 +52,8 @@ export default function Home() {
         </p>
       </header>
 
-      {/* 링크 카드 목록 — 카드 사이 간격은 4 (16px), 글래스 효과가 잘 보이도록 충분히 띄움 */}
-      <ul className="mt-12 flex w-full flex-col gap-4">
-        {links.map((link) => (
-          <li key={link.id}>
-            <LinkCard link={link} />
-          </li>
-        ))}
-      </ul>
+      {/* 링크 카드 목록 — 카운트 fetch / 낙관적 업데이트는 LinkList 안에서 처리 */}
+      <LinkList links={links} />
 
       <footer className="mt-14 text-xs text-stone-500/80">
         © {new Date().getFullYear()} 링크나무
