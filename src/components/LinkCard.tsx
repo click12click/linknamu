@@ -32,9 +32,13 @@ export default function LinkCard({ link }: LinkCardProps) {
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => recordClick(link.id)}
-      className="flex w-full items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-5 py-4 text-base font-medium shadow-sm transition hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 dark:border-white/15 dark:bg-white/5"
+      className="flex w-full items-center justify-center gap-3 rounded-2xl border border-white/60 bg-white/40 px-5 py-4 text-base font-medium text-stone-800 shadow-[0_8px_24px_-12px_rgba(120,70,30,0.25)] backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-white/55 active:translate-y-0"
     >
-      {link.emoji ? <span aria-hidden>{link.emoji}</span> : null}
+      {link.emoji ? (
+        <span aria-hidden className="text-lg leading-none">
+          {link.emoji}
+        </span>
+      ) : null}
       <span>{link.title}</span>
     </a>
   );
